@@ -7,22 +7,18 @@ Sign your name:________________
      * Add an eat() method for Animal that prints 'Munch munch.'
      * Add a make_noise() method for Animal that prints 'Grrr says [animal name].'
 
-     
  2. Write code that defines a class named Cat:
      * Make Animal the parent.
      * Add a constructor for Cat that prints 'A cat has been born.'
      * Modify the constructor so it calls the parent constructor as well.
      * Add a make_noise() method for Cat that prints 'Meow says [animal name].'
 
-     
  3. Write code that defines a class named Dog:
-     
      * Make Animal the parent.
      * Add a constructor for Dog that prints 'A dog has been born.'
      * Modify the constructor so it calls the parent constructor as well.
      * Add a make_noise() method for Dog that prints 'Bark says [animal name].'
 
-     
  4. Write a main program with:
      
      * Code that creates a cat, two dogs, and an animal with names.
@@ -46,3 +42,19 @@ Munch munch
 Grrr says (animal name) .
 '''
 
+class Animal():
+    def __init__(self):
+        print("An animal has been born")
+        self.name = "Todo"
+    def eat(self):
+        print("Munch munch")
+    def make_noise(self):
+        print("Grrr says", self.name)
+
+class Cat(Animal):
+    def __init__(self):
+        print("A cat has been born")
+        self.make_noise = ("Meow says", self.name)
+
+
+Class Dog():
