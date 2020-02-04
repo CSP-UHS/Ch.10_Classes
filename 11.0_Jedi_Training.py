@@ -57,4 +57,8 @@ class Cat(Animal):
         self.make_noise = ("Meow says", self.name)
 
 
-Class Dog():
+class Dog(Animal):
+    def __init__(self):
+        print("A dog has been born")
+        self.make_noise = ("Bark says", self.name)
+
