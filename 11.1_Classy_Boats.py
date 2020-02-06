@@ -30,6 +30,7 @@ Let's Float the Boat
 OUTPUT:
 USS Hermon is already docked.
 USS Hermon is undocking
+
 USS Hermon isn't docked.
 USS Hermon is docking
 USS Hermon is already docked.
@@ -38,7 +39,7 @@ USS Hermon is undocking
 USS Hermon is submerging!
 '''
 
-class Boat():
+class boat():
     def __init__(self):
         self.name = ""
         self.isDocked = True
@@ -55,8 +56,14 @@ class Boat():
             print(self.name, "is undocking")
             self.isDocked = False
 
-class Submarine(Boat):
+class submarine(boat):
     def __init__(self):
         super().__init__()
     def submerge(self):
         print(self.name, "is submerging")
+
+boat = boat()
+boat.name = "USS Hermon"
+boat.dock()
+boat.undock()
+
