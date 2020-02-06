@@ -29,23 +29,26 @@ An animal has been born.
 A cat has been born.
 Munch munch
 Meow says (cat name) .
+
 An animal has been born.
 A dog has been born.
 Munch munch
 Bark says (dog name).
+
 An animal has been born.
 A dog has been born.
 Munch munch
 Bark says (another dog name) .
+
 An animal has been born.
 Munch munch
 Grrr says (animal name) .
 '''
 
 class animal():
-    def __init__(self,):
+    def __init__(self):
         print("An animal has been born")
-        self.name = "Naó"
+        self.name = ""
     def eat(self):
         print("Munch munch")
     def make_noise(self):
@@ -53,15 +56,33 @@ class animal():
 
 class cat(animal):
     def __init__(self):
+        super().__init__()
         print("A cat has been born")
-        self.name = "Xiǎo māo"
-        self.make_noise = ("Meow says", self.name)
+    def make_noise(self):
+        print("Meow says", self.name)
 
-class Dog(animal):
+class dog(animal):
     def __init__(self):
+        super().__init__()
         print("A dog has been born")
-        self.name = "Dá Gǒu"
-        self.make_noise = ("Bark says", self.name)
+    def make_noise(self):
+        print("Bark says", self.name)
 
-animal()
+cat = cat()
+cat.name = "Mao"
+cat.eat()
+cat.make_noise()
+
+dog_1 = dog()
+dog_1.name = "DaGou"
+dog.make_noise(dog_1)
+
+dog_2 = dog()
+dog_2.name = "ErGou"
+cat.eat()
+dog.make_noise(dog_2)
+
+animal = animal()
+animal.name = "SanAnimal"
 animal.eat()
+animal.make_noise()
