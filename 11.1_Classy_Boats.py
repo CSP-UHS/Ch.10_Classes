@@ -13,8 +13,8 @@ Use the following Pseudocode to create this program:
     8.) Add another method called undock( )
     9.) In this method, if the boat is already undocked print "(boat name) is already undocked."
     10.) If it is docked print "(boat name) is undocking" and set the isDocked attribute to False.
-11.) Add another class called Submarine( ) that will inherit the Boat( ) class.
-12.) In the Submarine( ) class create a method called submerge( ) that will print "(boat name) is submerging" 
+    11.) Add another class called Submarine( ) that will inherit the Boat( ) class.
+    12.) In the Submarine( ) class create a method called submerge( ) that will print "(boat name) is submerging"
 if the boat is undocked and "(boat name) can't sumberge" if the boat is docked.
 
 Let's Float the Boat
@@ -56,3 +56,7 @@ class Boat():
             self.isDocked = False
 
 class Submarine(Boat):
+    def __init__(self):
+        super().__init__()
+    def submerge(self):
+        print(self.name, "is submerging")
