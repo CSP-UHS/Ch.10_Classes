@@ -30,7 +30,6 @@ Let's Float the Boat
 OUTPUT:
 USS Hermon is already docked.
 USS Hermon is undocking
-
 USS Hermon isn't docked.
 USS Hermon is docking
 USS Hermon is already docked.
@@ -52,7 +51,7 @@ class boat():
     def undock(self):
         if self.isDocked == False:
             print(self.name, "is already undocked")
-        if self.isDocked == True:
+        else:
             print(self.name, "is undocking")
             self.isDocked = False
 
@@ -65,5 +64,6 @@ class submarine(boat):
 boat = boat()
 boat.name = "USS Hermon"
 boat.dock()
+boat.undock()
 boat.undock()
 
