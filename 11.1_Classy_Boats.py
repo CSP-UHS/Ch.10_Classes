@@ -24,7 +24,7 @@ Let's Float the Boat
     15.) Call the undock( ) method twice
     16.) Call the dock( ) method two more times
 17.) Call the submerge( ) method once
-18.) Call the undock( ) method once
+    18.) Call the undock( ) method once
 19.) Call the submerge( ) method a final time.
 
 OUTPUT:
@@ -34,7 +34,7 @@ OUTPUT:
     USS Hermon is docking
     USS Hermon is already docked.
 USS Hermon can't submerge!
-USS Hermon is undocking
+    USS Hermon is undocking
 USS Hermon is submerging!
 '''
 
@@ -58,19 +58,21 @@ class boat():
 class submarine(boat):
     def __init__(self):
         super().__init__()
+        self.name = ""
     def submerge(self):
-        if self.isDocked == True:
-            print(self.name, "is submerging")
+        if self.isDocked == False:
+            print(self.name + "is submerging")
         else:
-            print(self.name, "can't sumberge")
+            print(self.name + "can't sumberge")
 
 
-submarine = submarine()
-boat = boat()
+boat = submarine()
 boat.name = "USS Hermon"
 boat.dock()
 boat.undock()
 boat.undock()
 boat.dock()
 boat.dock()
-submarine.submerge()
+boat.submerge()
+boat.undock()
+boat.submerge()
