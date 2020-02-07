@@ -5,7 +5,7 @@ Use the following Pseudocode to create this program:
 
     1.) Create a class called Boat( )
     2.) Use a constructor that sets two attibutes: name and isDocked.
-3.) The name should be entered as an argument when the object is created.
+    3.) The name should be entered as an argument when the object is created.
     4.) The isDocked attribute is a Boolean variable. Set it to True.
     5.) Add a method called dock( )
     6.) In this method, if the boat is already docked print "(boat name) is already docked."
@@ -15,17 +15,17 @@ Use the following Pseudocode to create this program:
     10.) If it is docked print "(boat name) is undocking" and set the isDocked attribute to False.
     11.) Add another class called Submarine( ) that will inherit the Boat( ) class.
     12.) In the Submarine( ) class create a method called submerge( ) that will print "(boat name) is submerging"
-if the boat is undocked and "(boat name) can't sumberge" if the boat is docked.
+    if the boat is undocked and "(boat name) can't sumberge" if the boat is docked.
 
 Let's Float the Boat
 --------------------
-13.) Instantiate an object of the Submarine( ) class. Don't forget to pass in a name.
+    13.) Instantiate an object of the Submarine( ) class. Don't forget to pass in a name.
     14.) Call the dock( ) method once
     15.) Call the undock( ) method twice
     16.) Call the dock( ) method two more times
-17.) Call the submerge( ) method once
+    17.) Call the submerge( ) method once
     18.) Call the undock( ) method once
-19.) Call the submerge( ) method a final time.
+    19.) Call the submerge( ) method a final time.
 
 OUTPUT:
     USS Hermon is already docked.
@@ -33,9 +33,9 @@ OUTPUT:
     USS Hermon is already undocked.
     USS Hermon is docking
     USS Hermon is already docked.
-USS Hermon can't submerge!
+    USS Hermon can't submerge!
     USS Hermon is undocking
-USS Hermon is submerging!
+    USS Hermon is submerging!
 '''
 
 class boat():
@@ -61,9 +61,9 @@ class submarine(boat):
         self.name = ""
     def submerge(self):
         if self.isDocked == False:
-            print(self.name + "is submerging")
+            print(self.name, "is submerging")
         else:
-            print(self.name + "can't sumberge")
+            print(self.name, "can't sumberge")
 
 
 boat = submarine()
