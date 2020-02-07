@@ -59,7 +59,11 @@ class submarine(boat):
     def __init__(self):
         super().__init__()
     def submerge(self):
-        print(self.name, "is submerging")
+        if self.isDocked == True:
+            print(self.name, "is submerging")
+        else:
+            print(self.name, "can't sumberge")
+
 
 submarine = submarine()
 boat = boat()
