@@ -4,7 +4,7 @@
 Initialize the x and y positions to be somewhere in the window.
     Initialize the radius to be 10 pixels.
     Initialize the color to randomized 0-255 RGB color format.
-Add a method to the Circle Class called draw_circle and draw the circle.
+    Add a method to the Circle Class called draw_circle and draw the circle.
 In the main program, use a for loop to call the Circle class and draw it 1000 times.
 Feel free to see what happens if you draw it 10,000 times as well.
 '''
@@ -18,11 +18,13 @@ arcade.start_render()
 ########        Draw here
 class Circle():
     def __init__(self):
-        x = 10
-        y = 10
+        x = random.randint(0,501)
+        y = random.randint(0, 301)
         radius = 10
         color = (random.randint(0, 255), random.randint(0, 255), random.randint(0, 255))
-
+    def draw_circle(self):
+        for i in range(1000):
+            arcade.draw_circle_filled(y, x )
 
 ########        Draw here
 arcade.finish_render()
