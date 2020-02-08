@@ -16,16 +16,18 @@ arcade.set_background_color(arcade.color.WHITE)
 
 arcade.start_render()
 ########        Draw here
-class Circle():
+class circle():
     def __init__(self):
-        x = random.randint(0,501)
-        y = random.randint(0, 301)
-        radius = 10
-        color = (random.randint(0, 255), random.randint(0, 255), random.randint(0, 255))
+        self.x = random.randint(0,501)
+        self.y = random.randint(0, 301)
+        self.radius = 10
+        self.color = (random.randint(0, 255), random.randint(0, 255), random.randint(0, 255))
     def draw_circle(self):
         for i in range(1000):
-            arcade.draw_circle_filled(y, x )
+            arcade.draw_circle_filled(self.y, self.x, self.radius, self.color)
 
+circle = circle()
+circle.draw_circle()
 ########        Draw here
 arcade.finish_render()
 arcade.run()
