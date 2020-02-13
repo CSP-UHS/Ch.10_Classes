@@ -1,5 +1,5 @@
 '''
-Sign your name:________________
+Sign your name:_____Emma_E._Moritz______
  
  1. Write code that defines a class named Animal:
      * Add a constructor for the Animal class that prints 'An animal has been born.'
@@ -45,4 +45,4 @@ An animal has been born.
 Munch munch
 Grrr says (animal name) .
 '''
-
+ 
