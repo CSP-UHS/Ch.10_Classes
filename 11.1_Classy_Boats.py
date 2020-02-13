@@ -38,7 +38,7 @@ OUTPUT:
     USS Hermon is submerging!
 '''
 
-class boat():
+class Boat():
     def __init__(self):
         self.name = ""
         self.isDocked = True
@@ -55,7 +55,7 @@ class boat():
             print(self.name, "is undocking")
             self.isDocked = False
 
-class submarine(boat):
+class Submarine(Boat):
     def __init__(self):
         super().__init__()
         self.name = ""
@@ -66,7 +66,7 @@ class submarine(boat):
             print(self.name, "can't sumberge")
 
 
-boat = submarine()
+boat = Submarine()
 boat.name = "USS Hermon"
 boat.dock()
 boat.undock()
