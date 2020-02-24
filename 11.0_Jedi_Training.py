@@ -7,7 +7,7 @@ Sign your name: Danny H
      * Add an eat() method for Animal that prints 'Munch munch.'
      * Add a make_noise() method for Animal that prints 'Grrr says [animal name].'
 
-     
+
  2. Write code that defines a class named Cat:
      * Make Animal the parent.
      * Add a constructor for Cat that prints 'A cat has been born.'
@@ -46,3 +46,24 @@ Munch munch
 Grrr says (animal name) .
 '''
 
+class Animal():
+    def __init__(self,name):
+        print("An animal has been born!")
+        self.name = name
+    def eat(self):
+        print("Munch Munch.")
+    def make_noise(self):
+        print("Grr says the," self.name, ".")
+
+class Cat(Animal):
+    def __init__(self):
+        print("A cat has been born.")
+
+
+
+
+def main():
+
+
+if __name__ == "main":
+    main()
