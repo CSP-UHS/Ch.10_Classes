@@ -55,8 +55,22 @@ class Boat():
             print(self.name, "is undocking.")
             self.isDocked = False
 
+class Submarine(Boat):
+    def submerge(self):
+        if self.isDocked == True:
+            print(self.name, "can not submerge because it is docked.")
+        else:
+            print(self.name, "is submerging!")
+
 def main():
-    pass
+    sub = Submarine("USS Water")
+    sub.dock()
+    sub.undock()
+    sub.undock()
+    sub.dock()
+    sub.submerge()
+    sub.undock()
+    sub.submerge()
 
 if __name__ == "__main__":
     main()
