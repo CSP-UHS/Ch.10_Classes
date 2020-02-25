@@ -49,10 +49,14 @@ class Boat():
             print(self.name, "is docking.")
             self.isDocked = True
     def undock(self):
-        #Left off here
+        if self.isDocked == False:
+            print(self.name, "is already undocked.")
+        else:
+            print(self.name, "is undocking.")
+            self.isDocked = False
 
 def main():
-#make main here
+    pass
 
 if __name__ == "__main__":
     main()
