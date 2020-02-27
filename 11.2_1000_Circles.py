@@ -32,7 +32,13 @@ def main():
     arcade.set_background_color(arcade.color.WHITE)
     arcade.start_render()
 
-
+for i in range(10000):
+    circle = Circle()
+    circle.draw_circle()
 
 arcade.finish_render()
 arcade.run()
+
+
+if __name == "__name__":
+    main()
