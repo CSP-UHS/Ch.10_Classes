@@ -28,17 +28,15 @@ class Circle():
 
 
 def main():
-    arcade.open_window(SW, SH, "1000 Circles")
+    arcade.open_window(500, 300, "1000 Circles")
     arcade.set_background_color(arcade.color.WHITE)
     arcade.start_render()
-
-for i in range(10000):
-    circle = Circle()
-    circle.draw_circle()
-
-arcade.finish_render()
-arcade.run()
+    for i in range(1000000):
+        circle = Circle()
+        circle.draw_circle()
+    arcade.finish_render()
+    arcade.run()
 
 
-if __name == "__name__":
+if __name__ == "__main__":
     main()
