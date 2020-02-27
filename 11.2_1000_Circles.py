@@ -9,17 +9,30 @@ In the main program, use a for loop to call the Circle class and draw it 1000 ti
 Feel free to see what happens if you draw it 10,000 times as well.
 '''
 
-import arcade, random
+import arcade
+import random
+
+SW = 500 #Screenwidth and height
+SH = 300
+
 
 class Circle():
     def __init__(self):
-        self.x_pos = random.randint(5,495)
+        self.radius = 10
+        self.x_pos = random.randint(self.radius, SW-self.radius)
+        self.y_pos = random.randint(self.radius, SH-self.radius)
+        self.color = (random.randint(0,255), random.randint(0,255), random.randint(0,255))
+
+    def draw_circle(self):
+        arcade.draw_circle_filled(self.x_pos, self.y_pos, self.radius, self.color)
+
 
 def main():
-    arcade.open_window(500,300, "1000 Circles")
+    arcade.open_window(SW, SH, "1000 Circles")
     arcade.set_background_color(arcade.color.WHITE)
     arcade.start_render()
 
 
 
 arcade.finish_render()
+arcade.run()
