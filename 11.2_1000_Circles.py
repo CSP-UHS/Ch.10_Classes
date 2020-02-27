@@ -31,7 +31,7 @@ def main():
     arcade.open_window(500, 300, "1000 Circles")
     arcade.set_background_color(arcade.color.WHITE)
     arcade.start_render()
-    for i in range(1000000):
+    for i in range(1000):
         circle = Circle()
         circle.draw_circle()
     arcade.finish_render()
