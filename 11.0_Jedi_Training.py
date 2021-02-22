@@ -1,5 +1,5 @@
 '''
-Sign your name:________________
+Sign your name: Geni W
  
  1. Write code that defines a class named Animal:
      * Add a constructor for the Animal class that prints 'An animal has been born.'
