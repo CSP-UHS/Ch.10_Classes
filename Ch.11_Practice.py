@@ -1,28 +1,34 @@
 class Character:
-    def __init__(self):
-        self.name = ""
-        self.status = ""
-        self.strength = ""
-        self.midichlorian_count = 0
-        self.home = ""
+    def __init__(self, name, status, strength, mc, home): # variables needed for character
+        self.name = name
+        self.status = status
+        self.strength = strength
+        self.midichlorian_count = mc
+        self.home = home
 
-jedi_1 = Character()
-
-
-jedi_1.name = "Obi-Wan Kenobi"
-jedi_1.status = "Jedi Master"
-jedi_1.strength = "100"
-jedi_1.midichlorian_count = 20
-jedi_1.home = "Tatooine"
-
-jedi_2 = Character()
+    def fight(self):
+        print("Lightsaber activate!, says", self.name) # says for any type of character when called
 
 
-jedi_2.name = "Yoda"
-jedi_2.status = "Jedi Master"
-jedi_2.strength = "200"
-jedi_2.midichlorian_count = 50
-jedi_2.home = "Dagobah"
+class Droid(Character):
+    def __init__(self, name, status, strength, mc, home, type):
+        super().__init__(name, status, strength, mc, home)
+        self.type = type
 
-print(jedi_1.name)
-print(jedi_2.name)
+    def beep(self):
+        print("Beep, Beep, says", self.name) # will say this for a droid character when called
+
+    def fight(self):
+        super().fight()
+        print("I'm stunning you!, says", self.name) # says for droid character when called
+
+
+jedi_1 = Character("Obi-Wan Kenobi", "Jedi Master", 100, 20, "Tatooine") # makes character
+jedi_1.fight()
+
+jedi_2 = Character("Yoda", "Jedi Master", 200, 50, "Dagobah") # makes character
+jedi_2.fight()
+
+object_1 = Droid("R2D2", "Robot", 2, 0, "Naboo", "Class C Robot") # makes droid character
+object_1.beep()
+object_1.fight()
