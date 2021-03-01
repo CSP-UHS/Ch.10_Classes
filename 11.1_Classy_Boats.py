@@ -1,4 +1,4 @@
-'''
+"""
 CLASSY BOATS
 -----------------
 Use the following Pseudocode to create this program:
@@ -36,6 +36,66 @@ USS Hermon is already docked.
 USS Hermon can't submerge!
 USS Hermon is undocking
 USS Hermon is submerging!
-'''
+"""
 
 
+class Boat:
+    def __init__(self, name):
+        self.name = name
+        self.isDocked = True
+
+    def dock(self):
+        if self.isDocked:
+            print(self.name, "is already docked.")
+        else:
+            print(self.name, "is docking.")
+            self.isDocked = True
+
+    def undock(self):
+        if self.isDocked:
+            print(self.name, "is undocking.")
+            self.isDocked = False
+        else:
+            print(self.name, "is already undocked.")
+
+
+class Submarine(Boat):
+    def __init__(self, name):
+        super().__init__(name)
+        self.submerged = False
+
+    def dock(self):
+        super().dock()
+
+    def undock(self):
+        super().undock()
+
+    def submerge(self):
+        if self.isDocked:
+            print(self.name, "is unable to submerge.")
+        else:
+            print(self.name, "is submerging.")
+            self.submerged = True
+
+    def surface(self):
+        if self.submerged:
+            print(self.name, "is surfacing.")
+            self.submerged = False
+        else:
+            print(self.name, "is already surfaced.")
+
+
+def main():
+    sub = Submarine("Nautalis")
+    sub.dock()
+    sub.undock()
+    sub.undock()
+    sub.dock()
+    sub.dock()
+    sub.submerge()
+    sub.undock()
+    sub.submerge()
+
+
+if __name__ == "__main__":
+    main()
