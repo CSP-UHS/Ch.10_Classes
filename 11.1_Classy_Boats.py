@@ -39,36 +39,42 @@ USS Hermon is submerging!
 '''
 
 class Boat:
-    def __init__(self,name,isDocked):
+    def __init__(self,name):
         self.name=name
-        self.isDocked=isDocked
+        self.isDocked=True
+
     def dock(self):
-        isDock=True
-        print(self.name, "is docking")
+        if self.isDocked:
+            print(self.name,"is already docked!")
+        else:
+            print(self.name, "is docking")
+            self.isDocked=True
+
     def undock(self):
-        isDock=False
-        print(self.name, "is undocking")
-
-
-Boat = Boat("Boat",True)
+        if self.isDocked:
+            print(self.name, "is now undocking")
+            self.isDocked = False
+        else:
+            print(self.name, "is already undocked")
 
 class Submarine(Boat):
-    def __init__(self,name,isDocked):
-        super.__init__(name)
-
-    def dock(self):
-        isDock = True
-        print(self.name, "is docking")
-
-    def undock(self):
-        isDock = False
-        print(self.name, "is undocking")
 
     def submerge(self):
-        print(self.name, "is submerging")
+        if self.isDocked:
+            print(self.name, "cant submerge because it is docked!")
+        else:
+            print(self.name, "is now submerging")
 
+def main():
+    sub=Submarine("USS Ohio")
+    sub.dock()
+    sub.undock()
+    sub.undock()
+    sub.dock()
+    sub.dock()
+    sub.submerge()
+    sub.undock()
+    sub.submerge()
 
-Submarine = Submarine("USS Ohio", True)
-
-Submarine.undock()
-Submarine.dock()
+if __name__== "__main__":
+    main()
