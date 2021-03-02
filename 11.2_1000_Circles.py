@@ -19,10 +19,10 @@ class Circle:
         self.x=random.randint(radius,SW-radius)
         self.y=random.randint(radius,SH-radius)
         self.radius=radius
-        self.color=(random.randint())
+        self.color=(random.randint(0,255),random.randint(0,255),random.randint(0,255))
 
-    def draw(self):
-
+    def draw_circle(self):
+        arcade.draw_circle_filled(self.x,self.y,self.radius,self.color)
 
 
 
@@ -32,6 +32,9 @@ def main():
     arcade.start_render()
 
 
+    for i in range(1001):
+        circ = Circle()
+        circ.draw_circle()
 
 
     arcade.finish_render()
