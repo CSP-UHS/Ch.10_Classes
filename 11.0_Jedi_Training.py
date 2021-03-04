@@ -46,3 +46,56 @@ Munch munch
 Grrr says (animal name) .
 '''
 
+# 1
+
+
+class Animal:
+    def __init__(self, name):
+        self.name = name
+        print('Animal has been born.')
+
+    def eat(self):
+        print('Munch Munch.')
+
+    def make_noise(self):
+        print('grrr says', self.name)
+# 2
+
+
+class Cat(Animal):
+    def __init__(self, name):
+        super().__init__(name)      # look to the 'super' class for the variable
+        print('A cat has been born.')
+
+    def make_noise(self):
+        print('Meow says', self.name)
+# 3
+
+
+class Dog(Animal):
+    def __init__(self, name):
+        super().__init__(name)
+        print('A dog has been born.')
+
+    def make_noise(self):
+        print('Bark says', self.name)
+# 4
+
+
+def main():
+    whiskers = Cat("whiskers")
+    whiskers.eat()
+    whiskers.make_noise()
+    snoopy = Dog("Snoopy")
+    snoopy.eat()
+    snoopy.make_noise()
+    duke = Dog("Duke")
+    duke.eat()
+    duke.make_noise()
+    bessie = Animal("Bessie")
+    bessie.eat()
+    bessie.make_noise()
+
+
+if __name__ == "__main__":
+    main()
