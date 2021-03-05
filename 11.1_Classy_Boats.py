@@ -37,3 +37,51 @@ USS Hermon can't submerge!
 USS Hermon is undocking
 USS Hermon is submerging!
 '''
+
+
+class Boat:
+    def __init__(self, name):
+        self.name = name
+        self.isDocked = True    # create new parameter that will remain consistent
+
+    def dock(self):
+        if self.isDocked is False:
+            self.isDocked = True
+            print(self.name, 'is docking.')
+        else:
+            print(self.name, 'is already docked.')
+
+    def undock(self):
+        if self.isDocked is True:
+            self.isDocked = False
+            print(self.name, 'is undocking.')
+        else:
+            print(self.name, 'is already undocked.')
+
+
+class Submarine(Boat):
+    def __init__(self, name):
+        super().__init__(name)
+        self.isDocked = True
+
+    def submerge(self):
+        if self.isDocked is True:
+            print(self.name, "can't submerge!")
+        else:
+            print(self.name, "is submerging!")
+
+
+def main():
+    tom = Submarine("USS TOM")
+    tom.dock()
+    tom.undock()
+    tom.undock()
+    tom.dock()
+    tom.dock()
+    tom.submerge()
+    tom.undock()
+    tom.submerge()
+
+
+if __name__ == "__main__":
+    main()
