@@ -8,3 +8,4 @@ Add a method to the Circle Class called draw_circle and draw the circle.
 In the main program, use a for loop to call the Circle class and draw it 1000 times.
 Feel free to see what happens if you draw it 10,000 times as well.
 '''
+import arcade

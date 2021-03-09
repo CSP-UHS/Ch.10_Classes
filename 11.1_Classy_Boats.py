@@ -4,7 +4,7 @@ CLASSY BOATS
 Use the following Pseudocode to create this program:
 
 1.) Create a class called Boat( )
-2.) Use a constructor that sets two attibutes: name and isDocked.
+2.) Use a constructor that sets two attributes: name and isDocked.
 3.) The name should be entered as an argument when the object is created.
 4.) The isDocked attribute is a Boolean variable. Set it to True.
 5.) Add a method called dock( )
@@ -16,7 +16,56 @@ Use the following Pseudocode to create this program:
 11.) Add another class called Submarine( ) that will inherit the Boat( ) class.
 12.) In the Submarine( ) class create a method called submerge( ) that will print "(boat name) is submerging" 
 if the boat is undocked and "(boat name) can't sumberge" if the boat is docked.
+'''
+isDocked = True
 
+
+class Boat:
+    def __init__(self, name, isDocked):
+        self.name = name
+        self.isDocked = True
+
+    def dock(self):
+        if self.isDocked:
+            print(self.name, "is already docked")
+        else:
+            print(self.name, "is docking")
+            self.isDocked = True
+
+    def undock(self):
+        if self.isDocked:
+            print(self.name, "is now undocking")
+            self.isDocked = False
+        else:
+            print(self.name, "is already docked")
+            self.isDocked = True
+
+
+class Submarine(Boat):
+    def __init__(self, name):
+        self.name = name
+
+    def submerge(self):
+        if self.isDocked:
+            print(self.name, "can'y submerge because it is docked!")
+        else:
+            print(self.name, "is now submerging!")
+
+def main():
+    sub = Submarine("USS GETZ")
+    sub.dock()
+    sub.undock()
+    sub.undock()
+    sub.dock()
+    sub.dock()
+    sub.submerge()
+    sub.undock()
+    sub.submerge()
+
+
+if __name__ == "__main__":
+    main()
+'''
 Let's Float the Boat
 --------------------
 13.) Instantiate an object of the Submarine( ) class. Don't forget to pass in a name.
@@ -37,3 +86,5 @@ USS Hermon can't submerge!
 USS Hermon is undocking
 USS Hermon is submerging!
 '''
+
+
