@@ -6,23 +6,56 @@ Sign your name:________________
      * Add an attribute for the animal name.
      * Add an eat() method for Animal that prints 'Munch munch.'
      * Add a make_noise() method for Animal that prints 'Grrr says [animal name].'
+'''
 
-     
+
+class Animal:
+    def __init__(self, name):
+        print("An animal has been born")
+        self.name = name
+
+    def eat(self):
+        print("Munch Munch")
+
+    def make_noise(self):
+        print(f"Grrr says {self.name}")
+
+'''
  2. Write code that defines a class named Cat:
      * Make Animal the parent.
      * Add a constructor for Cat that prints 'A cat has been born.'
      * Modify the constructor so it calls the parent constructor as well.
      * Add a make_noise() method for Cat that prints 'Meow says [animal name].'
+'''
 
-     
+
+class Cat(Animal):
+    def __init__(self, name):
+        super().__init__(name)
+        print("A cat has been born")
+
+    def make_noise(self):
+        print(f"Meow says {self.name}")
+
+'''  
  3. Write code that defines a class named Dog:
      
      * Make Animal the parent.
      * Add a constructor for Dog that prints 'A dog has been born.'
      * Modify the constructor so it calls the parent constructor as well.
      * Add a make_noise() method for Dog that prints 'Bark says [animal name].'
+'''
 
-     
+
+class Dog(Animal):
+    def __init__(self, name):
+        super().__init__(name)
+        print("A dog has been born")
+
+    def make_noise(self):
+        print(f"Bark says {self.name}")
+
+'''  
  4. Write a main program with:
      
      * Code that creates a cat, two dogs, and an animal with names.
@@ -46,3 +79,25 @@ Munch munch
 Grrr says (animal name) .
 '''
 
+def main():
+    # Create John
+    john = Cat("John")
+    john.eat()
+    john.make_noise()
+    # Create Mitchell
+    mitchell = Dog("Mitchell")
+    mitchell.eat()
+    mitchell.make_noise()
+    # Create Michelle
+    michelle = Dog("Michelle")
+    michelle.eat()
+    michelle.make_noise()
+    # Create stacy
+    stacy = Animal("Stacy")
+    stacy.eat()
+    stacy.make_noise()
+
+
+
+if __name__ == "__main__":
+    main()
