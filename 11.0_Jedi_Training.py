@@ -1,5 +1,5 @@
 '''
-Sign your name:________________
+Sign your name:____ethan januszewski______
  
  1. Write code that defines a class named Animal:
      * Add a constructor for the Animal class that prints 'An animal has been born.'
@@ -46,3 +46,50 @@ Munch munch
 Grrr says (animal name) .
 '''
 
+class Animal:
+    def __init__(self, name):
+        self.name = name
+        print("An animal has been born")
+
+    def eat(self):
+        print("Munch munch")
+
+    def make_noise(self):
+        print("Grr, says", self.name)
+
+
+class Cat(Animal):
+    def __init__(self, name):
+        super().__init__(name)
+        print("A cat has been born")
+
+    def make_noise(self):
+        print("Meow, says", self.name)
+
+
+class Dog(Animal):
+    def __init__(self, name):
+        super().__init__(name)
+        print("A dog has been born")
+
+    def make_noise(self):
+        print("Bark, says", self.name)
+
+
+def main():
+    egypt = Cat("Worship")
+    egypt.eat()
+    egypt.make_noise()
+    loyal = Dog("Scorpio")
+    loyal.eat()
+    loyal.make_noise()
+    huge = Dog("Hugo")
+    huge.eat()
+    huge.make_noise()
+    dumb = Animal("Doug")
+    dumb.eat()
+    dumb.make_noise()
+
+
+if __name__ == "__main__":
+    main()
