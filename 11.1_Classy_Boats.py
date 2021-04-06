@@ -10,12 +10,12 @@ Use the following Pseudocode to create this program:
 5.) Add a method called dock( )
 6.) In this method, if the boat is already docked print "(boat name) is already docked."
 7.) If it is not docked, print "(boat name) is docking" and set the isDocked attribute to True.
-8.) Add another method called undock( )
-9.) In this method, if the boat is already undocked print "(boat name) is already undocked."
-10.) If it is docked print "(boat name) is undocking" and set the isDocked attribute to False.
+8.) Add another method called un_dock( )
+9.) In this method, if the boat is already un_docked print "(boat name) is already un_docked."
+10.) If it is docked print "(boat name) is un_docking" and set the isDocked attribute to False.
 11.) Add another class called Submarine( ) that will inherit the Boat( ) class.
 12.) In the Submarine( ) class create a method called submerge( ) that will print "(boat name) is submerging" 
-if the boat is undocked and "(boat name) can't sumberge" if the boat is docked.
+if the boat is un_docked and "(boat name) can't sumberge" if the boat is docked.
 '''
 isDocked = True
 
@@ -26,15 +26,15 @@ class Boat:
         self.isDocked = True
 
     def dock(self):
-        if self.isDocked:
+        if self == isDocked:
             print(self.name, "is already docked")
         else:
             print(self.name, "is docking")
             self.isDocked = True
 
-    def undock(self):
-        if self.isDocked:
-            print(self.name, "is now undocking")
+    def un_dock(self):
+        if self == isDocked:
+            print(self.name, "is now un_docking")
             self.isDocked = False
         else:
             print(self.name, "is already docked")
@@ -51,15 +51,16 @@ class Submarine(Boat):
         else:
             print(self.name, "is now submerging!")
 
+
 def main():
     sub = Submarine("USS GETZ")
     sub.dock()
-    sub.undock()
-    sub.undock()
+    sub.un_dock()
+    sub.un_dock()
     sub.dock()
     sub.dock()
     sub.submerge()
-    sub.undock()
+    sub.un_dock()
     sub.submerge()
 
 
@@ -70,20 +71,20 @@ Let's Float the Boat
 --------------------
 13.) Instantiate an object of the Submarine( ) class. Don't forget to pass in a name.
 14.) Call the dock( ) method once
-15.) Call the undock( ) method twice
+15.) Call the un_dock( ) method twice
 16.) Call the dock( ) method two more times
 17.) Call the submerge( ) method once
-18.) Call the undock( ) method once
+18.) Call the un_dock( ) method once
 19.) Call the submerge( ) method a final time.
 
 OUTPUT:
 USS Hermon is already docked.
-USS Hermon is undocking
-USS Hermon is already undocked.
+USS Hermon is un_docking
+USS Hermon is already un_docked.
 USS Hermon is docking
 USS Hermon is already docked.
 USS Hermon can't submerge!
-USS Hermon is undocking
+USS Hermon is un_docking
 USS Hermon is submerging!
 '''
 
