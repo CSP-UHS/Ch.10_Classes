@@ -14,7 +14,7 @@ Use the following Pseudocode to create this program:
 9.) In this method, if the boat is already undocked print "(boat name) is already undocked."
 10.) If it is docked print "(boat name) is undocking" and set the isDocked attribute to False.
 11.) Add another class called Submarine( ) that will inherit the Boat( ) class.
-12.) In the Submarine( ) class create a method called submerge( ) that will print "(boat name) is submerging" 
+12.) In the Submarine( ) class create a method called submerge( ) that will print "(boat name) is submerging"
 if the boat is undocked and "(boat name) can't submerge" if the boat is docked.
 
 Let's Float the Boat
@@ -37,3 +37,51 @@ USS Hermon can't submerge!
 USS Hermon is undocking
 USS Hermon is submerging!
 '''
+
+
+class Boat:
+    def __init__(self, new_name):
+        self.name = new_name
+        self.isDocked = True
+
+    def dock(self):
+        if self.isDocked:
+            print(self.name, "is already docked.")
+        else:
+            print(self.name, "is docking")
+            self.isDocked = True
+
+    def undock(self):
+        if not self.isDocked:
+            print(self.name, "is already undocked.")
+        else:
+            print(self.name, "is undocking")
+            self.isDocked = False
+
+
+class Submarine(Boat):
+    def __init__(self, new_name):
+        super().__init__(new_name)
+        self.submerged = False
+
+    def submerge(self):
+        if not self.submerged and not self.isDocked:
+            print(self.name, "is submerging")
+        else:
+            print(self.name, "cannot submerge")
+
+
+def main():
+    boat = Submarine("USS Awesome")
+    boat.dock()
+    boat.undock()
+    boat.undock()
+    boat.dock()
+    boat.dock()
+    boat.submerge()
+    boat.undock()
+    boat.submerge()
+
+
+if __name__ == "__main__":
+    main()
