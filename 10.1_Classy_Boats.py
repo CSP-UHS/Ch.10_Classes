@@ -17,6 +17,52 @@ Use the following Pseudocode to create this program:
 12.) In the Submarine( ) class create a method called submerge( ) that will print "(boat name) is submerging" 
 if the boat is undocked and "(boat name) can't submerge" if the boat is docked.
 
+'''
+
+class Boat():
+    def __init__(self,name):
+        self.name = name
+        self.isDocked = True
+    def dock(self):
+        if self.isDocked == True:
+            print(self.name,"is already docked")
+        elif self.isDocked == False:
+            print(self.name,"is docking")
+            self.isDocked = True
+    def undock(self):
+
+        if self.isDocked == False:
+            print(self.name,"is already undocked")
+        elif self.isDocked == True:
+            print(self.name,"is undocking")
+            self.isDocked = False
+
+class Submarine(Boat):
+    def submerge(self):
+        if self.isDocked == False:
+            print(self.name,"is submerging")
+        elif self.isDocked == True:
+            print(self.name,"can't submerge")
+
+def main():
+    boat = Submarine("USS Oded")
+    boat.dock()
+    boat.undock()
+    boat.undock()
+    boat.dock()
+    boat.dock()
+    boat.submerge()
+    boat.undock()
+    boat.submerge()
+
+if __name__ == "__main__":
+    main()
+
+
+
+
+'''
+
 Let's Float the Boat
 --------------------
 13.) Instantiate an object of the Submarine( ) class. Don't forget to pass in a name.
