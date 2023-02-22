@@ -1,5 +1,5 @@
 '''
-Sign your name:________________
+Sign your name:___benjamin_____________
  
  1. Write code that defines a class named Animal:
      * Add a constructor for the Animal class that prints 'An animal has been born.'
@@ -7,7 +7,7 @@ Sign your name:________________
      * Add an eat() method for Animal that prints 'Munch munch.'
      * Add a make_noise() method for Animal that prints 'Grrr says [animal name].'
 
-     
+
  2. Write code that defines a class named Cat:
      * Make Animal the parent.
      * Add a constructor for Cat that prints 'A cat has been born.'
@@ -45,4 +45,69 @@ An animal has been born.
 Munch munch
 Grrr says (animal name) .
 '''
+
+#code 1
+
+class Animal():
+    def __init__(self,name):
+        self.name = name
+        print("An animal has been born!")
+    def eat(self):
+        print("Munch munch")
+    def make_noise(self):
+        print("Grr says "+self.name)
+
+
+# sam = Animal("Sam")
+# sam.eat()
+# sam.make_noise()
+
+print()
+#code 2
+
+class Cat(Animal):
+    def __init__(self,name):
+        super().__init__(name)
+        self.name = name
+        print("A cat has been born")
+    def make_noise(self):
+        print("Meow says "+self.name)
+# sammy = Cat("Sammy")
+# sammy.make_noise()
+
+#code 3
+print()
+class Dog(Animal):
+    def __init__(self,name):
+        super().__init__(self)
+        self.name = name
+        print("A Dog has been born")
+    def make_noise(self):
+        print("Bark says "+self.name)
+
+# john = Dog("John")
+# john.make_noise()
+
+#code 4
+
+def main():
+    cat =Cat("Felix")
+    cat.eat()
+    cat.make_noise()
+
+    dog1 = Dog("John")
+    dog1.eat()
+    dog1.make_noise()
+
+    dog2 = Dog("Sammy")
+    dog2.eat()
+    dog2.make_noise()
+
+    animal = Animal("Doug")
+    animal.eat()
+    animal.make_noise()
+if __name__=="__main__":
+    main()
+
+
 
